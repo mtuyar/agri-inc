@@ -377,3 +377,4 @@ const InteractiveFarmGame = ({ onGameComplete, onBackToMain }) => {
 };
 
 export default InteractiveFarmGame;
+

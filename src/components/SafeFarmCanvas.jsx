@@ -362,3 +362,4 @@ const SafeFarmCanvas = ({
 };
 
 export default SafeFarmCanvas;
+

@@ -7,10 +7,6 @@ import ScoreBoard from './components/ScoreBoard'
 import TutorialModal from './components/TutorialModal'
 import DiseaseWarning from './components/DiseaseWarning'
 import ActionFeedback from './components/ActionFeedback'
-import InteractiveFarmGame from './components/InteractiveFarmGame'
-import ModernInteractiveFarmGame from './components/ModernInteractiveFarmGame'
-import EnhancedInteractiveFarmGame from './components/EnhancedInteractiveFarmGame'
-import SuperWorkingFarmGame from './components/SuperWorkingFarmGame'
 import { calculateCropHealth, getRandomEvent, getNasaBasedEvent, calculateHarvestScore, UPGRADES, SEASONS, DECISIONS, checkForDiseases, getDiseaseWarning } from './utils/gameLogic'
 
 function App() {
@@ -31,7 +27,7 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
   const [showActionFeedback, setShowActionFeedback] = useState(false);
-  const [currentGameMode, setCurrentGameMode] = useState(null); // null, 'simulation', 'interactive', 'modern', 'enhanced', 'super'
+  const [currentGameMode, setCurrentGameMode] = useState(null); // null, 'simulation'
 
   const handleDecision = (decision) => {
     setGameState(prev => ({
@@ -135,52 +131,6 @@ function App() {
     setCurrentGameMode(null);
   };
 
-  const handleInteractiveGameComplete = (score) => {
-    alert(`🎉 Tebrikler! Interaktif oyunda ${score} puan aldınız!`);
-    setCurrentGameMode(null);
-  };
-
-  const handleBackToMain = () => {
-    setCurrentGameMode(null);
-    setGameStarted(false);
-  };
-
-  // Interaktif oyun modları
-  if (currentGameMode === 'interactive') {
-    return (
-      <InteractiveFarmGame 
-        onGameComplete={handleInteractiveGameComplete}
-        onBackToMain={handleBackToMain}
-      />
-    );
-  }
-
-  if (currentGameMode === 'modern') {
-    return (
-      <ModernInteractiveFarmGame 
-        onGameComplete={handleInteractiveGameComplete}
-        onBackToMain={handleBackToMain}
-      />
-    );
-  }
-
-  if (currentGameMode === 'enhanced') {
-    return (
-      <EnhancedInteractiveFarmGame 
-        onGameComplete={handleInteractiveGameComplete}
-        onBackToMain={handleBackToMain}
-      />
-    );
-  }
-
-  if (currentGameMode === 'super') {
-    return (
-      <SuperWorkingFarmGame 
-        onGameComplete={handleInteractiveGameComplete}
-        onBackToMain={handleBackToMain}
-      />
-    );
-  }
 
   if (!gameStarted) {
     return (
@@ -198,141 +148,38 @@ function App() {
           <h1 className="text-5xl font-bold text-green-700 mb-4">AgriInc</h1>
           <p className="text-2xl text-gray-700 mb-6">Tarım Yönetimi Simülasyonu</p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="max-w-2xl mx-auto mb-8">
             {/* Simülasyon Oyunu */}
-            <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl text-left shadow-inner hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <h2 className="text-xl font-bold text-green-800 mb-4">📊 Strateji Simülasyonu</h2>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">🛰️</span>
-                  <div>
-                    <strong>NASA Verileri:</strong> Gerçek NDVI ve IMERG verilerine dayalı
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">🎯</span>
-                  <div>
-                    <strong>Strateji:</strong> 4 sezon boyunca bilinçli kararlar alın
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">🚀</span>
-                  <div>
-                    <strong>Teknoloji:</strong> Yeni teknolojiler açarak verimliliği artırın
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            {/* Klasik Interaktif Oyun */}
-            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl text-left shadow-inner hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <h2 className="text-xl font-bold text-orange-800 mb-4">🎮 Klasik Çiftçilik</h2>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">⌨️</span>
-                  <div>
-                    <strong>Klavye Kontrolü:</strong> WASD ile çiftçiyi yönlendirin
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">🌱</span>
-                  <div>
-                    <strong>Gerçek Zamanlı:</strong> Anlık ekme, gübreleme, sulama
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">🏆</span>
-                  <div>
-                    <strong>Hızlı Oyun:</strong> 5 dakikada en yüksek skoru yapın
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            {/* Modern Canvas Oyunu */}
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl text-left shadow-inner hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <h2 className="text-xl font-bold text-purple-800 mb-4">✨ Modern Çiftçilik</h2>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">🎨</span>
-                  <div>
-                    <strong>Canvas Grafik:</strong> Modern 2D grafik ve animasyonlar
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">💫</span>
-                  <div>
-                    <strong>Parçacık Efektleri:</strong> Görsel efektler ve animasyonlar
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">🏅</span>
-                  <div>
-                    <strong>Seviye Sistemi:</strong> XP ve seviye atlama sistemi
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            {/* Gelişmiş Oyun */}
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl text-left shadow-inner hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <h2 className="text-xl font-bold text-indigo-800 mb-4">🚜 Gelişmiş Çiftçilik</h2>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">🚜</span>
-                  <div>
-                    <strong>Ekipmanlar:</strong> Traktör, biçerdöver, sulama sistemi
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">🌦️</span>
-                  <div>
-                    <strong>Hava Durumu:</strong> Dinamik hava durumu ve mevsimler
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">💰</span>
-                  <div>
-                    <strong>Ekonomi:</strong> Para sistemi ve ekipman satın alma
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            {/* Süper Oyun */}
-            <div className="bg-gradient-to-br from-pink-50 to-rose-50 p-6 rounded-xl text-left shadow-inner hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <h2 className="text-xl font-bold text-pink-800 mb-4">✨ Süper Çiftçilik</h2>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">🎨</span>
-                  <div>
-                    <strong>Süper Grafikler:</strong> Gradient, glow, parçacık efektleri
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">⚡</span>
-                  <div>
-                    <strong>Tam Çalışan:</strong> Tüm eylemler mükemmel çalışır
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl">💰</span>
-                  <div>
-                    <strong>Test Modu:</strong> Bol para ve kaynak ile test edin
-                  </div>
-                </li>
-              </ul>
+            <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-xl text-left shadow-inner hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <h2 className="text-2xl font-bold text-green-800 mb-6 text-center">📊 Strateji Simülasyonu</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl mb-3">🛰️</div>
+                  <h3 className="font-bold text-green-700 mb-2">NASA Verileri</h3>
+                  <p className="text-sm text-gray-600">Gerçek NDVI ve IMERG verilerine dayalı</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl mb-3">🎯</div>
+                  <h3 className="font-bold text-green-700 mb-2">Strateji</h3>
+                  <p className="text-sm text-gray-600">4 sezon boyunca bilinçli kararlar alın</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl mb-3">🚀</div>
+                  <h3 className="font-bold text-green-700 mb-2">Teknoloji</h3>
+                  <p className="text-sm text-gray-600">Yeni teknolojiler açarak verimliliği artırın</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+          <div className="flex justify-center gap-6">
             <button
               onClick={() => {
                 setGameStarted(true);
                 setCurrentGameMode('simulation');
                 setShowTutorial(true);
               }}
-              className="px-3 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-bold rounded-xl hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all shadow-lg"
+              className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-xl hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all shadow-lg"
             >
               📚 Simülasyon Tutorial
             </button>
@@ -341,33 +188,9 @@ function App() {
                 setGameStarted(true);
                 setCurrentGameMode('simulation');
               }}
-              className="px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-bold rounded-xl hover:from-blue-600 hover:to-blue-700 transform hover:scale-105 transition-all shadow-lg"
+              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-lg font-bold rounded-xl hover:from-blue-600 hover:to-blue-700 transform hover:scale-105 transition-all shadow-lg"
             >
               🚀 Simülasyon Başla
-            </button>
-            <button
-              onClick={() => setCurrentGameMode('interactive')}
-              className="px-3 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold rounded-xl hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all shadow-lg"
-            >
-              🎮 Klasik Oyun
-            </button>
-            <button
-              onClick={() => setCurrentGameMode('modern')}
-              className="px-3 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold rounded-xl hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all shadow-lg"
-            >
-              ✨ Modern Oyun
-            </button>
-            <button
-              onClick={() => setCurrentGameMode('enhanced')}
-              className="px-3 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-bold rounded-xl hover:from-indigo-600 hover:to-purple-600 transform hover:scale-105 transition-all shadow-lg"
-            >
-              🚜 Gelişmiş Oyun
-            </button>
-            <button
-              onClick={() => setCurrentGameMode('super')}
-              className="px-3 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xs font-bold rounded-xl hover:from-pink-600 hover:to-rose-600 transform hover:scale-105 transition-all shadow-lg"
-            >
-              ✨ Süper Oyun
             </button>
           </div>
 

@@ -535,3 +535,4 @@ const EnhancedFarmCanvas = ({
 };
 
 export default EnhancedFarmCanvas;
+

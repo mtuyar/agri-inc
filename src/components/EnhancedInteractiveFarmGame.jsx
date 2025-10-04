@@ -573,3 +573,4 @@ const EnhancedInteractiveFarmGame = ({ onGameComplete, onBackToMain }) => {
 };
 
 export default EnhancedInteractiveFarmGame;
+

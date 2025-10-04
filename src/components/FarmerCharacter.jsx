@@ -72,3 +72,4 @@ const FarmerCharacter = ({ position, direction, isMoving, currentAction }) => {
 };
 
 export default FarmerCharacter;
+

@@ -1,0 +1,178 @@
+[
+  {
+    "index": 0,
+    "Date": "2022-12-19",
+    "NDVI": 0.1964,
+    "season": "kis",
+    "health": 19.64
+  },
+  {
+    "index": 1,
+    "Date": "2023-01-01",
+    "NDVI": 0.165,
+    "season": "kis",
+    "health": 16.5
+  },
+  {
+    "index": 2,
+    "Date": "2023-01-17",
+    "NDVI": 0.1361,
+    "season": "kis",
+    "health": 13.61
+  },
+  {
+    "index": 3,
+    "Date": "2023-02-02",
+    "NDVI": 0.0182,
+    "season": "kis",
+    "health": 1.82
+  },
+  {
+    "index": 4,
+    "Date": "2023-02-18",
+    "NDVI": 0.1716,
+    "season": "kis",
+    "health": 17.16
+  },
+  {
+    "index": 5,
+    "Date": "2023-03-06",
+    "NDVI": 0.1745,
+    "season": "ilkbahar_erken",
+    "health": 17.45
+  },
+  {
+    "index": 6,
+    "Date": "2023-03-22",
+    "NDVI": 0.2205,
+    "season": "ilkbahar_erken",
+    "health": 22.05
+  },
+  {
+    "index": 7,
+    "Date": "2023-04-07",
+    "NDVI": 0.1841,
+    "season": "ilkbahar_erken",
+    "health": 18.41
+  },
+  {
+    "index": 8,
+    "Date": "2023-04-23",
+    "NDVI": 0.2064,
+    "season": "ilkbahar_gec",
+    "health": 20.64
+  },
+  {
+    "index": 9,
+    "Date": "2023-05-09",
+    "NDVI": 0.2594,
+    "season": "ilkbahar_gec",
+    "health": 25.94
+  },
+  {
+    "index": 10,
+    "Date": "2023-05-25",
+    "NDVI": 0.2595,
+    "season": "ilkbahar_gec",
+    "health": 25.95
+  },
+  {
+    "index": 11,
+    "Date": "2023-06-10",
+    "NDVI": 0.2718,
+    "season": "hasat",
+    "health": 27.18
+  },
+  {
+    "index": 12,
+    "Date": "2023-06-26",
+    "NDVI": 0.2439,
+    "season": "hasat",
+    "health": 24.39
+  },
+  {
+    "index": 24,
+    "Date": "2024-01-01",
+    "NDVI": 0.1968,
+    "season": "kis",
+    "health": 19.68
+  },
+  {
+    "index": 25,
+    "Date": "2024-01-17",
+    "NDVI": 0.1484,
+    "season": "kis",
+    "health": 14.84
+  },
+  {
+    "index": 26,
+    "Date": "2024-02-02",
+    "NDVI": 0.1622,
+    "season": "kis",
+    "health": 16.22
+  },
+  {
+    "index": 27,
+    "Date": "2024-02-18",
+    "NDVI": 0.2034,
+    "season": "kis",
+    "health": 20.34
+  },
+  {
+    "index": 28,
+    "Date": "2024-03-05",
+    "NDVI": 0.2118,
+    "season": "ilkbahar_erken",
+    "health": 21.18
+  },
+  {
+    "index": 29,
+    "Date": "2024-03-21",
+    "NDVI": 0.2142,
+    "season": "ilkbahar_erken",
+    "health": 21.42
+  },
+  {
+    "index": 30,
+    "Date": "2024-04-06",
+    "NDVI": 0.1985,
+    "season": "ilkbahar_erken",
+    "health": 19.85
+  },
+  {
+    "index": 31,
+    "Date": "2024-04-22",
+    "NDVI": 0.24,
+    "season": "ilkbahar_gec",
+    "health": 24.0
+  },
+  {
+    "index": 32,
+    "Date": "2024-05-08",
+    "NDVI": 0.2623,
+    "season": "ilkbahar_gec",
+    "health": 26.23
+  },
+  {
+    "index": 33,
+    "Date": "2024-05-24",
+    "NDVI": 0.2712,
+    "season": "ilkbahar_gec",
+    "health": 27.12
+  },
+  {
+    "index": 34,
+    "Date": "2024-06-09",
+    "NDVI": 0.2338,
+    "season": "hasat",
+    "health": 23.38
+  },
+  {
+    "index": 35,
+    "Date": "2024-06-25",
+    "NDVI": 0.2816,
+    "season": "hasat",
+    "health": 28.16
+  }
+]
+
